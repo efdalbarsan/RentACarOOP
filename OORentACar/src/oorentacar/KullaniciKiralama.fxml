@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="kiralamaPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oorentacar.KullaniciKiralamaController">
+   <children>
+      <ListView layoutX="313.0" layoutY="122.0" prefHeight="464.0" prefWidth="197.0" />
+      <ListView layoutX="552.0" layoutY="122.0" prefHeight="464.0" prefWidth="197.0" />
+      <Label layoutX="24.0" layoutY="31.0" prefHeight="59.0" prefWidth="250.0" text="ARAÇLAR">
+         <font>
+            <Font name="Arial Black" size="26.0" />
+         </font>
+      </Label>
+      <Button fx:id="taksiButton" layoutX="43.0" layoutY="122.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="TAKSİ" />
+      <Button fx:id="limuzinButton" layoutX="43.0" layoutY="173.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="LİMUZİN" />
+      <Button fx:id="suvButton" layoutX="43.0" layoutY="224.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="SUV" />
+      <Button fx:id="pikapButton" layoutX="43.0" layoutY="275.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="PİKAP" />
+      <Button fx:id="tirButton" layoutX="43.0" layoutY="329.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="TIR" />
+      <Button fx:id="kamyonButton" layoutX="43.0" layoutY="379.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="KAMYON" />
+      <Button fx:id="traktorButton" layoutX="43.0" layoutY="428.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="TRAKTÖR" />
+      <Button fx:id="motorButton" layoutX="43.0" layoutY="475.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="MOTOR" />
+      <Button fx:id="bisikletButton" layoutX="43.0" layoutY="519.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="BİSİKLET" />
+      <Button fx:id="yatButton" layoutX="43.0" layoutY="561.0" mnemonicParsing="false" onAction="#aracListesi" prefHeight="25.0" prefWidth="217.0" text="YAT" />
+      <Label layoutX="303.0" layoutY="31.0" prefHeight="59.0" prefWidth="217.0" text="ÇEŞİTLER">
+         <font>
+            <Font name="Arial Black" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="546.0" layoutY="31.0" prefHeight="59.0" prefWidth="207.0" text="ÖZELLİKLER">
+         <font>
+            <Font name="Arial Black" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="792.0" layoutY="31.0" prefHeight="59.0" prefWidth="207.0" text="TERCİH">
+         <font>
+            <Font name="Arial Black" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="792.0" layoutY="125.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="128.0" text="REZERVASYON YAP" />
+      <Button layoutX="805.0" layoutY="539.0" mnemonicParsing="false" onAction="#cikis" prefHeight="45.0" prefWidth="128.0" text="ÇIKIŞ" />
+   </children>
+</AnchorPane>

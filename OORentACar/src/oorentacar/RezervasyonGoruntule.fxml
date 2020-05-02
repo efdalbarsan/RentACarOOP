@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rezervasyonPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oorentacar.RezervasyonGoruntuleController">
+   <children>
+      <Label layoutX="24.0" layoutY="31.0" prefHeight="59.0" prefWidth="301.0" text="REZERVASYONLAR">
+         <font>
+            <Font name="Arial Black" size="26.0" />
+         </font>
+      </Label>
+      <ListView layoutX="24.0" layoutY="99.0" prefHeight="464.0" prefWidth="359.0" />
+      <TextField layoutX="421.0" layoutY="99.0" prefHeight="25.0" prefWidth="250.0" promptText="PALAKA" />
+      <TextField layoutX="421.0" layoutY="140.0" prefHeight="25.0" prefWidth="250.0" promptText="MARKA" />
+      <TextField layoutX="421.0" layoutY="182.0" prefHeight="25.0" prefWidth="250.0" promptText="MODEL" />
+      <TextField layoutX="421.0" layoutY="229.0" prefHeight="25.0" prefWidth="250.0" promptText="MÜŞTERİ" />
+      <TextField layoutX="421.0" layoutY="319.0" prefHeight="25.0" prefWidth="250.0" promptText="TESLİM TARİHİ" />
+      <TextField layoutX="421.0" layoutY="275.0" prefHeight="25.0" prefWidth="250.0" promptText="ALIŞ TARİHİ" />
+      <Button layoutX="911.0" layoutY="563.0" mnemonicParsing="false" onAction="#geri" prefHeight="25.0" prefWidth="70.0" text="GERİ" />
+      <Button layoutX="841.0" layoutY="23.0" mnemonicParsing="false" onAction="#cikis" prefHeight="59.0" prefWidth="141.0" text="ÇIKIŞ" />
+   </children>
+</AnchorPane>

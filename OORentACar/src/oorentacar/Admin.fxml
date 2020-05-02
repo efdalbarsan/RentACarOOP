@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="adminPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oorentacar.AdminController">
+   <children>
+      <Button mnemonicParsing="false" onAction="#taksiIslem" prefHeight="110.0" prefWidth="270.0" text="TAKSİ İŞLEMLERİ" />
+      <Button layoutY="331.0" mnemonicParsing="false" onAction="#limuzinIslem" prefHeight="110.0" prefWidth="270.0" text="LİMUZİN İŞLEMLERİ" />
+      <Button layoutX="730.0" mnemonicParsing="false" onAction="#motorIslem" prefHeight="110.0" prefWidth="270.0" text="MOTOR İŞLEMLERİ" />
+      <Button layoutX="376.0" layoutY="331.0" mnemonicParsing="false" onAction="#tirIslem" prefHeight="110.0" prefWidth="270.0" text="TIR İŞLEMLERİ" />
+      <Button layoutX="376.0" layoutY="161.0" mnemonicParsing="false" onAction="#traktorIslem" prefHeight="110.0" prefWidth="270.0" text="TRAKTÖR İŞLEMLERİ" />
+      <Button layoutX="376.0" mnemonicParsing="false" onAction="#kamyonIslem" prefHeight="110.0" prefWidth="270.0" text="KAMYON İŞLEMLERİ" />
+      <Button layoutY="161.0" mnemonicParsing="false" onAction="#suvIslem" prefHeight="110.0" prefWidth="270.0" text="SUV İŞLEMLERİ" />
+      <Button layoutX="730.0" layoutY="161.0" mnemonicParsing="false" onAction="#rezervasyonIslem" prefHeight="110.0" prefWidth="270.0" text="REZERVASYONLARI GÖRÜNTÜLE" />
+      <Button layoutY="490.0" mnemonicParsing="false" onAction="#hasarKaydiIslem" prefHeight="110.0" prefWidth="270.0" text="HASAR KAYDI İŞLEMLERİ" />
+      <Button layoutX="376.0" layoutY="490.0" mnemonicParsing="false" onAction="#bisikletIslem" prefHeight="110.0" prefWidth="270.0" text="BİSİKLET İŞLEMLERİ" />
+      <Button layoutX="730.0" layoutY="331.0" mnemonicParsing="false" onAction="#yatIslem" prefHeight="110.0" prefWidth="270.0" text="YAT İŞLEMLERİ" />
+      <Button layoutX="730.0" layoutY="490.0" mnemonicParsing="false" onAction="#pikapIslem" prefHeight="110.0" prefWidth="270.0" text="PİKAP İŞLEMLERİ" />
+   </children>
+</AnchorPane>
