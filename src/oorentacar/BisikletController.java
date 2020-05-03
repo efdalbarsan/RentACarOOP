@@ -5,6 +5,7 @@
  */
 package oorentacar;
 
+import entity.Arac;
 import entity.Bisiklet;
 import fao.BisikletFao;
 import java.io.IOException;
@@ -97,6 +98,7 @@ public class BisikletController implements Initializable {
         bisiklet.setYil(Integer.valueOf(yil.getText()));
 
         getBfao().ekle(bisiklet);
+        listeyiGoster();
     }
 
     public void listeyiGoster() {
@@ -123,12 +125,14 @@ public class BisikletController implements Initializable {
     private void update(ActionEvent event) {
         getForm();
         getBfao().guncelleme(getArac());
+        listeyiGoster();
     }
 
     @FXML
     private void delete(ActionEvent event) {
         getForm();
         getBfao().silme(getArac());
+        listeyiGoster();
     }
 
     public void getForm() {
@@ -142,14 +146,19 @@ public class BisikletController implements Initializable {
         getArac().setVites(vites.getText());
         getArac().setVitesSayisi(Integer.valueOf(vitesSayisi.getText()));
         getArac().setYakit(yakit.getText());
-        getArac().setYil(Integer.valueOf(yil.getText()));
+        getArac().setYil(Integer.valueOf(yil.getText()));     
     }
 
     public void updateForm(String term) {
-
-        getBfao().getAracList().stream().filter((bis) -> (term.equals(bis.getPlaka()))).forEachOrdered((bis) -> {
-            setArac((Bisiklet) bis);
-        });
+        for (Arac bis : getBfao().getAracList()) {
+            System.out.println("dongu"+bis.getPlaka());
+            if (bis.getPlaka().equals(term)) {
+                setArac((Bisiklet) bis);
+                System.out.println("-------------->" + bis.toString());
+                break;
+            }
+        }
+        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());

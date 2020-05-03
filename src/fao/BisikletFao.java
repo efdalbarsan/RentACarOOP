@@ -35,8 +35,8 @@ public class BisikletFao extends Fao {
                 tmp.setPlaka(data.substring(data.indexOf('>') + 1, data.indexOf('^')));
                 tmp.setMarka(data.substring(data.indexOf('^') + 1, data.indexOf('#')));
                 tmp.setModel(data.substring(data.indexOf('#') + 1, data.indexOf('*')));
-                tmp.setYil(Integer.valueOf(data.substring(data.indexOf('*') + 1, data.indexOf('&'))));
-                tmp.setKilometre(Integer.valueOf(data.substring(data.indexOf('&') + 1, data.indexOf('%'))));
+                tmp.setYil(Integer.valueOf(data.substring(data.indexOf('*') + 1, data.indexOf('$'))));
+                tmp.setKilometre(Integer.valueOf(data.substring(data.indexOf('$') + 1, data.indexOf('%'))));
                 tmp.setMotor(Double.valueOf(data.substring(data.indexOf('%') + 1, data.indexOf('&'))));
                 tmp.setYakit(data.substring(data.indexOf('&') + 1, data.indexOf('{')));
                 tmp.setVites(data.substring(data.indexOf('{') + 1, data.indexOf('(')));
@@ -45,8 +45,8 @@ public class BisikletFao extends Fao {
                 tmp.setJantBoyu(Integer.valueOf(data.substring(data.indexOf(']') + 1, data.indexOf(')'))));
                 tmp.setVitesSayisi(Integer.valueOf(data.substring(data.indexOf(')') + 1, data.indexOf('}'))));
 
-                tmp.setPlaka(data);
-
+         
+                System.out.println(tmp.getPlaka()+"*------------burasi getAraclist");
                 list.add(tmp);
                 System.out.println(data);
             }
