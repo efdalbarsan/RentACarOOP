@@ -32,5 +32,6 @@
       <Button layoutX="776.0" layoutY="218.0" mnemonicParsing="false" onAction="#delete" prefHeight="59.0" prefWidth="141.0" text="ARAÇ SİL" />
       <Button layoutX="901.0" layoutY="553.0" mnemonicParsing="false" onAction="#geri" prefHeight="25.0" prefWidth="70.0" text="GERİ" />
       <Button layoutX="776.0" layoutY="370.0" mnemonicParsing="false" onAction="#cikis" prefHeight="59.0" prefWidth="141.0" text="ÇIKIŞ" />
+      <Label fx:id="uyariLabel" layoutX="34.0" layoutY="100.0" textFill="RED" />
    </children>
 </AnchorPane>

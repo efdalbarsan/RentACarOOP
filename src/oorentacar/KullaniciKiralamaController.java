@@ -6,6 +6,7 @@
 package oorentacar;
 
 import entity.Arac;
+import entity.Bisiklet;
 import entity.Taksi;
 import entity.Tir;
 import fao.BisikletFao;
@@ -25,11 +26,17 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -39,7 +46,9 @@ import javafx.scene.layout.AnchorPane;
  */
 public class KullaniciKiralamaController implements Initializable {
 
-    private List<Arac> aracList=null;
+    private List<String> stringList;
+    private ObservableList observableList;
+    private List<Arac> aracList = null;
     @FXML
     private Button taksiButton;
     @FXML
@@ -62,59 +71,121 @@ public class KullaniciKiralamaController implements Initializable {
     private Button pikapButton;
     @FXML
     private AnchorPane kiralamaPane;
+    @FXML
+    private ListView listView;
+    @FXML
+    private Label plakaLabel;
+    @FXML
+    private Label modelLabel;
+    @FXML
+    private Label markaLabel;
+    @FXML
+    private Label rezLabel;
+    @FXML
+    private Label fiyatLabel;
+
+    Fao fao;
     /**
      * Initializes the controller class.
      */
-    
-    
     @FXML
-    private void aracListesi(ActionEvent event){
-        String tip = event.getSource().toString().substring(event.getSource().toString().indexOf('[')+1, event.getSource().toString().indexOf(','));
+    private void aracListesi(ActionEvent event) {
+        String tip = event.getSource().toString().substring(event.getSource().toString().indexOf('[') + 1, event.getSource().toString().indexOf(','));
         System.out.println(tip);
-        Fao fao ;
+        
         if (tip.equals("id=taksiButton")) {
             fao = new TaksiFao();
             aracList = fao.getAracList();
-        }else if (tip.equals("id=suvButton")) {
+            listeyiGoster();
+
+        } else if (tip.equals("id=suvButton")) {
             fao = new SuvFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=limuzinButton")) {
+            aracList = fao.getAracList();
+        } else if (tip.equals("id=limuzinButton")) {
             fao = new LimuzinFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=kamyonButton")) {
+            aracList = fao.getAracList();
+        } else if (tip.equals("id=kamyonButton")) {
             fao = new KamyonFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=bisikletButton")) {
+            aracList = fao.getAracList();
+            listeyiGoster();
+        } else if (tip.equals("id=bisikletButton")) {
             fao = new BisikletFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=tirButton")) {
+            aracList = fao.getAracList();
+            listeyiGoster();
+        } else if (tip.equals("id=tirButton")) {
             fao = new TirFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=yatButton")) {
+            aracList = fao.getAracList();
+        } else if (tip.equals("id=yatButton")) {
             fao = new YatFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=motorButton")) {
+            aracList = fao.getAracList();
+        } else if (tip.equals("id=motorButton")) {
             fao = new MotorFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=traktorButton")) {
+            aracList = fao.getAracList();
+        } else if (tip.equals("id=traktorButton")) {
             fao = new TraktorFao();
-            aracList = fao.getAracList();            
-        }else if (tip.equals("id=pikapButton")) {
+            aracList = fao.getAracList();
+        } else if (tip.equals("id=pikapButton")) {
             fao = new PikapFao();
-            aracList = fao.getAracList();            
+            aracList = fao.getAracList();
         }
-        
+
     }
-     @FXML
+
+    public void updateForm(String term) {
+       
+        for (Arac bis : fao.getAracList()) {
+            System.out.println("dongu" + bis.getPlaka());
+            if (bis.getPlaka().equals(term)) {
+                markaLabel.setText(bis.getMarka());
+                modelLabel.setText(bis.getModel());
+                plakaLabel.setText(bis.getPlaka());
+                System.out.println("-------------->" + bis.toString());
+                break;
+            }
+        }
+
+        //marka.setText(arc.getModel());
+    }
+
+    // FXML elementi element.setVisibility(true);
+    // element.setText("");
+    @FXML
+    public void rezervasyonYap(ActionEvent event) {
+        rezLabel.setText("Rezervasyon başarıyla yapıldı!");
+        System.out.println("Rezervasyon başarıyla yapıldı!");
+    }
+
+    public void listeyiGoster() {
+        
+        stringList = fao.plakaList();
+
+        observableList = FXCollections.observableArrayList();
+
+        observableList.setAll(stringList);
+
+        listView.setItems(observableList);
+
+        listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                System.out.println("ListView selection changed from oldValue = "
+                        + oldValue + " to newValue = " + newValue + " " + observable.getValue());
+                updateForm(newValue);
+            }
+        });
+
+    }
+
+    @FXML
     private void cikis(ActionEvent event) throws IOException {
-         MusteriManager.setGecerliMusteri(null);
+        MusteriManager.setGecerliMusteri(null);
         AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         kiralamaPane.getChildren().setAll(pane);
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

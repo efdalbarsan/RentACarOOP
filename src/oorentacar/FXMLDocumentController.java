@@ -51,15 +51,20 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void girisYap(ActionEvent event) throws IOException {
         MusteriFao mfao = new MusteriFao();
-        Musteri musteri = mfao.giris(emailField.getText(), parolaField.getText());
+        Musteri musteri = null;
+        if (sayiMi(emailField.getText())) {
+            musteri = mfao.giris(Integer.valueOf(emailField.getText()), parolaField.getText());
+        } else {
+            musteri = mfao.giris(emailField.getText(), parolaField.getText());
+        }
 
         if (musteri != null) {
             MusteriManager.setGecerliMusteri(musteri);
-            System.out.println("Başarılı giriş!!!!");
+            System.out.println("Başarılı giriş!");
             if (musteri.getAdmin() == 0) {
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("KullaniciKiralama.fxml"));
                 rootPane.getChildren().setAll(pane);
-            }else if(musteri.getAdmin() ==1){
+            } else if (musteri.getAdmin() == 1) {
                 AnchorPane pane = FXMLLoader.load(getClass().getResource("Admin.fxml"));
                 rootPane.getChildren().setAll(pane);
             }
@@ -67,6 +72,16 @@ public class FXMLDocumentController implements Initializable {
         } else {
             System.out.println("Hatalı giriş!!!!");
         }
+    }
+
+    boolean sayiMi(String terim) {
+        for (int i = 0; i < terim.length(); i++) {
+            System.out.println(Character.isAlphabetic(terim.charAt(i)));
+            if (Character.isAlphabetic(terim.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override

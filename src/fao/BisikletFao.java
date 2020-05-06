@@ -44,9 +44,6 @@ public class BisikletFao extends Fao {
                 tmp.setRenk(data.substring(data.indexOf('[') + 1, data.indexOf(']')));
                 tmp.setJantBoyu(Integer.valueOf(data.substring(data.indexOf(']') + 1, data.indexOf(')'))));
                 tmp.setVitesSayisi(Integer.valueOf(data.substring(data.indexOf(')') + 1, data.indexOf('}'))));
-
-         
-                System.out.println(tmp.getPlaka()+"*------------burasi getAraclist");
                 list.add(tmp);
                 System.out.println(data);
             }
@@ -70,14 +67,14 @@ public class BisikletFao extends Fao {
             bw.write(bis.toFile());
             bw.newLine();
             bw.close();
-            System.out.println("Successfully wrote to the file");
+            System.out.println("Bisiklet kaydetme basarili");
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
 
         }
     }
-
+    @Override
     public List<String> plakaList() {
         List<String> list = new ArrayList<>();
         try {
@@ -117,7 +114,7 @@ public class BisikletFao extends Fao {
                 bw.newLine();
             }
             bw.close();
-            System.out.println("Successfully wrote to the file");
+            System.out.println("Bisiklet silme basarili");
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
@@ -145,7 +142,7 @@ public class BisikletFao extends Fao {
                 bw.newLine();
             }
             bw.close();
-            System.out.println("Successfully wrote to the file");
+            System.out.println("Bisiklet guncelleme basarili");
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();

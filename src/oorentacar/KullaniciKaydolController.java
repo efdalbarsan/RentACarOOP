@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 /**
@@ -33,27 +34,39 @@ public class KullaniciKaydolController implements Initializable {
     private TextField parolaField;
     @FXML
     private TextField parolatekrarField;
-    
-     @FXML
+    @FXML
+    private Label uyari;
+
+    @FXML
     private void kayitOl(ActionEvent event) {
-         Musteri musteri = new Musteri();
-         musteri.setAdi(isimField.getText());
-         musteri.setSoyadi(soyisimField.getText());
-         musteri.setEmail(emailField.getText());
-         musteri.setKullaniciAdi(kullaniciadiField.getText());
-         musteri.setParola(parolaField.getText());
-         
-         MusteriFao mfao = new MusteriFao();
-         mfao.Ekle(musteri);
-         
+        if (parolaKontrol()) {
+            
+        
+        Musteri musteri = new Musteri();
+        musteri.setAdi(isimField.getText());
+        musteri.setSoyadi(soyisimField.getText());
+        musteri.setEmail(emailField.getText());
+        musteri.setKullaniciAdi(kullaniciadiField.getText());
+        musteri.setParola(parolaField.getText());
+
+        MusteriFao mfao = new MusteriFao();
+        mfao.Ekle(musteri);
+        }else{
+            uyari.setVisible(true);
+        }
+
     }
     
+    boolean parolaKontrol(){
+        return parolaField.getText().equals(parolatekrarField.getText());
+    }
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        uyari.setVisible(false);
+    }
+
 }

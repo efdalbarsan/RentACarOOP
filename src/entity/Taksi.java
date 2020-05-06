@@ -11,7 +11,7 @@ package entity;
  */
 public class Taksi extends Arac{
     private String tipi;
-    private boolean sunroof;
+    private String sunroof;
     private int hiz;
 
     public Taksi() {
@@ -29,13 +29,15 @@ public class Taksi extends Arac{
         this.tipi = tipi;
     }
 
-    public boolean isSunroof() {
+    public String getSunroof() {
         return sunroof;
     }
 
-    public void setSunroof(boolean sunroof) {
+    public void setSunroof(String sunroof) {
         this.sunroof = sunroof;
     }
+
+    
 
     public int getHiz() {
         return hiz;
@@ -45,8 +47,12 @@ public class Taksi extends Arac{
         this.hiz = hiz;
     }
 
+    public String toFile() {
+        return "<"+getArac_id()+">"+getPlaka()+"^"+getMarka()+"#"+getModel()+"*"+getYil()+"$"
+                +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+tipi +"]"+sunroof+")"+hiz+"}";
+    }
     @Override
     public String toString() {
-        return "Taksi{" + "tipi=" + tipi + ", sunroof=" + sunroof + ", hiz=" + hiz + '}';
-    }   
+        return "Plaka"+getPlaka();
+    } 
 }

@@ -44,5 +44,10 @@
          </font>
       </TextField>
       <Button layoutX="34.0" layoutY="489.0" mnemonicParsing="false" onAction="#kayitOl" prefHeight="46.0" prefWidth="266.0" text="KAYIT OL" />
+      <Label fx:id="uyari" layoutX="61.0" layoutY="441.0" text="Girilen parolalar uyusmuyor!" textFill="RED">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

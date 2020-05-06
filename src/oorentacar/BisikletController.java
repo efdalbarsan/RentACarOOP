@@ -5,6 +5,7 @@
  */
 package oorentacar;
 
+import com.sun.deploy.util.StringUtils;
 import entity.Arac;
 import entity.Bisiklet;
 import fao.BisikletFao;
@@ -20,6 +21,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -65,6 +67,8 @@ public class BisikletController implements Initializable {
 
     @FXML
     private ListView listView;
+    @FXML
+    private Label uyariLabel;
 
     private List<String> stringList;
     private ObservableList observableList;
@@ -84,21 +88,29 @@ public class BisikletController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Bisiklet bisiklet = new Bisiklet();
-        bisiklet.setFiyat(Integer.valueOf(fiyat.getText()));
-        bisiklet.setJantBoyu(Integer.valueOf(jantboyu.getText()));
-        bisiklet.setKilometre(Integer.valueOf(kilometre.getText()));
-        bisiklet.setMarka(marka.getText());
-        bisiklet.setModel(model.getText());
-        bisiklet.setPlaka(plaka.getText());
-        bisiklet.setMotor(Double.valueOf(motor.getText()));
-        bisiklet.setRenk(renk.getText());
-        bisiklet.setVites(vites.getText());
-        bisiklet.setVitesSayisi(Integer.valueOf(vitesSayisi.getText()));
-        bisiklet.setYakit(yakit.getText());
-        bisiklet.setYil(Integer.valueOf(yil.getText()));
+        // marka.getText().equals("")
+        if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
+            uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
+        } else if (marka.getText().equals("")) {
+            uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
+        } else {
+            bisiklet.setFiyat(Integer.valueOf(fiyat.getText()));
+            bisiklet.setJantBoyu(Integer.valueOf(jantboyu.getText()));
+            bisiklet.setKilometre(Integer.valueOf(kilometre.getText()));
+            bisiklet.setMarka(marka.getText());
+            bisiklet.setModel(model.getText());
+            bisiklet.setPlaka(plaka.getText());
+            bisiklet.setMotor(Double.valueOf(motor.getText()));
+            bisiklet.setRenk(renk.getText());
+            bisiklet.setVites(vites.getText());
+            bisiklet.setVitesSayisi(Integer.valueOf(vitesSayisi.getText()));
+            bisiklet.setYakit(yakit.getText());
+            bisiklet.setYil(Integer.valueOf(yil.getText()));
 
-        getBfao().ekle(bisiklet);
-        listeyiGoster();
+            getBfao().ekle(bisiklet);
+            listeyiGoster();
+        }
+
     }
 
     public void listeyiGoster() {
@@ -146,12 +158,23 @@ public class BisikletController implements Initializable {
         getArac().setVites(vites.getText());
         getArac().setVitesSayisi(Integer.valueOf(vitesSayisi.getText()));
         getArac().setYakit(yakit.getText());
-        getArac().setYil(Integer.valueOf(yil.getText()));     
+        getArac().setYil(Integer.valueOf(yil.getText()));
+
+    }
+
+    boolean sayiMi(String terim) {
+        for (int i = 0; i < terim.length(); i++) {
+            System.out.println(Character.isAlphabetic(terim.charAt(i)));
+            if (Character.isAlphabetic(terim.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void updateForm(String term) {
         for (Arac bis : getBfao().getAracList()) {
-            System.out.println("dongu"+bis.getPlaka());
+            System.out.println("dongu" + bis.getPlaka());
             if (bis.getPlaka().equals(term)) {
                 setArac((Bisiklet) bis);
                 System.out.println("-------------->" + bis.toString());

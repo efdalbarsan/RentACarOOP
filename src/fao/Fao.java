@@ -21,5 +21,7 @@ public abstract class Fao {
     public abstract void guncelleme(Object obj);
 
     public abstract List<Arac> getAracList();
+    
+    public abstract List<String> plakaList();
 
 }
