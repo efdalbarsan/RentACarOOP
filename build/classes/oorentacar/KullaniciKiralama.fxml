@@ -41,9 +41,31 @@
       </Label>
       <Button layoutX="792.0" layoutY="125.0" mnemonicParsing="false" onAction="#rezervasyonYap" prefHeight="45.0" prefWidth="128.0" text="REZERVASYON YAP" />
       <Button layoutX="805.0" layoutY="539.0" mnemonicParsing="false" onAction="#cikis" prefHeight="45.0" prefWidth="128.0" text="ÇIKIŞ" />
-      <Label fx:id="plakaLabel" layoutX="558.0" layoutY="126.0" />
-      <Label fx:id="markaLabel" layoutX="558.0" layoutY="162.0" />
-      <Label fx:id="modelLabel" layoutX="558.0" layoutY="190.0" />
-      <Label fx:id="rezLabel" layoutX="791.0" layoutY="207.0" textFill="#00ff22" />
+      <Label fx:id="plakaLabel" layoutX="546.0" layoutY="131.0" prefHeight="32.0" prefWidth="61.0" textFill="#902121">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <Label fx:id="markaLabel" layoutX="546.0" layoutY="182.0" prefHeight="32.0" prefWidth="61.0" textFill="#9a3030">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <Label fx:id="modelLabel" layoutX="543.0" layoutY="237.0" prefHeight="32.0" prefWidth="67.0" textFill="#eb0000">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <Label fx:id="rezLabel" layoutX="791.0" layoutY="207.0" textFill="#218d2f">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label fx:id="vitesLabel" layoutX="546.0" layoutY="363.0" prefHeight="32.0" prefWidth="67.0" textFill="#ab2e2e">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="yakitLabel" layoutX="543.0" layoutY="300.0" prefHeight="32.0" prefWidth="61.0" textFill="#e80b0b">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -13,7 +13,7 @@
       <Button layoutX="376.0" mnemonicParsing="false" onAction="#kamyonIslem" prefHeight="110.0" prefWidth="270.0" text="KAMYON İŞLEMLERİ" />
       <Button layoutY="161.0" mnemonicParsing="false" onAction="#suvIslem" prefHeight="110.0" prefWidth="270.0" text="SUV İŞLEMLERİ" />
       <Button layoutX="730.0" layoutY="161.0" mnemonicParsing="false" onAction="#rezervasyonIslem" prefHeight="110.0" prefWidth="270.0" text="REZERVASYONLARI GÖRÜNTÜLE" />
-      <Button layoutY="490.0" mnemonicParsing="false" onAction="#hasarKaydiIslem" prefHeight="110.0" prefWidth="270.0" text="HASAR KAYDI İŞLEMLERİ" />
+      <Button layoutY="490.0" mnemonicParsing="false" onAction="#cikis" prefHeight="110.0" prefWidth="270.0" text="CIKIS" />
       <Button layoutX="376.0" layoutY="490.0" mnemonicParsing="false" onAction="#bisikletIslem" prefHeight="110.0" prefWidth="270.0" text="BİSİKLET İŞLEMLERİ" />
       <Button layoutX="730.0" layoutY="331.0" mnemonicParsing="false" onAction="#yatIslem" prefHeight="110.0" prefWidth="270.0" text="YAT İŞLEMLERİ" />
       <Button layoutX="730.0" layoutY="490.0" mnemonicParsing="false" onAction="#pikapIslem" prefHeight="110.0" prefWidth="270.0" text="PİKAP İŞLEMLERİ" />

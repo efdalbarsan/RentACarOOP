@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oorentacar.KullaniciKaydolController">
+<AnchorPane id="AnchorPane" fx:id="kayitPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #A9A9A9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oorentacar.KullaniciKaydolController">
    <children>
       <Label layoutX="34.0" layoutY="41.0" prefHeight="59.0" prefWidth="305.0" text="KAYIT OL">
          <font>
@@ -49,5 +49,6 @@
             <Font size="17.0" />
          </font>
       </Label>
+      <Button layoutX="807.0" layoutY="493.0" mnemonicParsing="false" onAction="#cikis" prefHeight="38.0" prefWidth="85.0" text="CIKIS" />
    </children>
 </AnchorPane>

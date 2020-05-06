@@ -82,9 +82,12 @@ public class KullaniciKiralamaController implements Initializable {
     @FXML
     private Label rezLabel;
     @FXML
-    private Label fiyatLabel;
+    private Label yakitLabel;
+    @FXML
+    private Label vitesLabel;
 
     Fao fao;
+
     /**
      * Initializes the controller class.
      */
@@ -92,12 +95,11 @@ public class KullaniciKiralamaController implements Initializable {
     private void aracListesi(ActionEvent event) {
         String tip = event.getSource().toString().substring(event.getSource().toString().indexOf('[') + 1, event.getSource().toString().indexOf(','));
         System.out.println(tip);
-        
+
         if (tip.equals("id=taksiButton")) {
             fao = new TaksiFao();
             aracList = fao.getAracList();
             listeyiGoster();
-
         } else if (tip.equals("id=suvButton")) {
             fao = new SuvFao();
             aracList = fao.getAracList();
@@ -132,13 +134,15 @@ public class KullaniciKiralamaController implements Initializable {
     }
 
     public void updateForm(String term) {
-       
+
         for (Arac bis : fao.getAracList()) {
             System.out.println("dongu" + bis.getPlaka());
             if (bis.getPlaka().equals(term)) {
                 markaLabel.setText(bis.getMarka());
                 modelLabel.setText(bis.getModel());
                 plakaLabel.setText(bis.getPlaka());
+                yakitLabel.setText(bis.getYakit());
+                vitesLabel.setText(bis.getVites());
                 System.out.println("-------------->" + bis.toString());
                 break;
             }
@@ -156,7 +160,7 @@ public class KullaniciKiralamaController implements Initializable {
     }
 
     public void listeyiGoster() {
-        
+
         stringList = fao.plakaList();
 
         observableList = FXCollections.observableArrayList();

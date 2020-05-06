@@ -79,8 +79,8 @@ public class AdminController implements Initializable {
     }
 
     @FXML
-    private void hasarKaydiIslem(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("HasarKaydi.fxml"));
+    private void cikis(ActionEvent event) throws IOException {
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 
