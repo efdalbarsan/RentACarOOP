@@ -45,10 +45,15 @@ public class Yat extends Arac{
         this.motorGucu = motorGucu;
     }
 
+    public String toFile() {
+        return "<"+getArac_id()+">"+getPlaka()+"^"+getMarka()+"#"+getModel()+"*"+getYil()+"$"
+                +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+yolcuKapesitesi +"]"+motorAdeti+")"+motorGucu+"}";
+    }
     @Override
     public String toString() {
-        return "Yat{" + "yolcuKapesitesi=" + yolcuKapesitesi + ", motorAdeti=" + motorAdeti + ", motorGucu=" + motorGucu + '}';
+        return "Plaka"+getPlaka();
     }
-    
-    
 }
+    
+    
+

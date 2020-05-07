@@ -93,6 +93,26 @@ public class BisikletController implements Initializable {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
             uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
+        } else if (!sayiMi(fiyat.getText()) || fiyat.getText().equals("")) {
+            uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
+        } else if (!sayiMi(jantboyu.getText()) || jantboyu.getText().equals("")) {
+            uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
+        } else if (vites.getText().equals("")) {
+            uyariLabel.setText("Lütfen vites için düzgün deger giriniz!");
+        } else if (model.getText().equals("")) {
+            uyariLabel.setText("Lütfen model için düzgün deger giriniz!");
+        } else if (plaka.getText().equals("")) {
+            uyariLabel.setText("Lütfen plaka için düzgün deger giriniz!");
+        } else if (renk.getText().equals("")) {
+            uyariLabel.setText("Lütfen renk için düzgün deger giriniz!");
+        } else if (yakit.getText().equals("")) {
+            uyariLabel.setText("Lütfen yakit için düzgün deger giriniz!");
+        } else if (!sayiMi(motor.getText()) || motor.getText().equals("")) {
+            uyariLabel.setText("Lütfen mmotor için düzgün deger giriniz!");
+        } else if (!sayiMi(vitesSayisi.getText()) || vitesSayisi.getText().equals("")) {
+            uyariLabel.setText("Lütfen vites sayisi için düzgün deger giriniz!");
+        } else if (!sayiMi(yil.getText()) || yil.getText().equals("")) {
+            uyariLabel.setText("Lütfen yil için düzgün deger giriniz!");
         } else {
             bisiklet.setFiyat(Integer.valueOf(fiyat.getText()));
             bisiklet.setJantBoyu(Integer.valueOf(jantboyu.getText()));
@@ -192,7 +212,7 @@ public class BisikletController implements Initializable {
         vites.setText(getArac().getVites());
         fiyat.setText(String.valueOf(getArac().getFiyat()));
         renk.setText(getArac().getRenk());
-        jantboyu.setText(String.valueOf(getArac().getRenk()));
+        jantboyu.setText(String.valueOf(getArac().getJantBoyu()));
         vitesSayisi.setText(String.valueOf(getArac().getVitesSayisi()));
 
         //marka.setText(arc.getModel());

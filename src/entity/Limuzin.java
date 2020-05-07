@@ -45,10 +45,15 @@ public class Limuzin extends Arac{
         this.renk = renk;
     }
 
+    public String toFile() {
+        return "<"+getArac_id()+">"+getPlaka()+"^"+getMarka()+"#"+getModel()+"*"+getYil()+"$"
+                +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+kapiSayisi +"]"+uzunluk+")"+renk+"}";
+    }
     @Override
     public String toString() {
-        return "Limuzin{" + "kapiSayisi=" + kapiSayisi + ", uzunluk=" + uzunluk + ", renk=" + renk + '}';
+        return "Plaka"+getPlaka();
     }
+
 
   
     
