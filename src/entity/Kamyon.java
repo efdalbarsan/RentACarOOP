@@ -45,10 +45,6 @@ public class Kamyon extends Arac{
         this.beygir = beygir;
     }
 
-    
-
-   
-
     public String toFile() {
         return "<"+getArac_id()+">"+getPlaka()+"^"+getMarka()+"#"+getModel()+"*"+getYil()+"$"
                 +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+yukseklik +"]"+agirlik+")"+beygir+"}";

@@ -9,10 +9,11 @@ package entity;
  *
  * @author Barsan
  */
-public class Traktor extends Arac{
+public class Traktor extends Arac {
+
     private int yukseklik;
     private int agirlik;
-    private double motor;
+    private int beygir;
 
     public Traktor() {
     }
@@ -37,18 +38,22 @@ public class Traktor extends Arac{
         this.agirlik = agirlik;
     }
 
-    public double getMotor() {
-        return motor;
+    public int getBeygir() {
+        return beygir;
     }
 
-    public void setMotor(double motor) {
-        this.motor = motor;
+    public void setBeygir(int beygir) {
+        this.beygir = beygir;
+    }
+
+    public String toFile() {
+        return "<" + getArac_id() + ">" + getPlaka() + "^" + getMarka() + "#" + getModel() + "*" + getYil() + "$"
+                + getKilometre() + "%" + getMotor() + "&" + getYakit() + "{" + getVites() + "(" + getFiyat() + "[" + yukseklik + "]" + agirlik + ")" + beygir + "}";
     }
 
     @Override
     public String toString() {
-        return "Traktor{" + "yukseklik=" + yukseklik + ", agirlik=" + agirlik + ", motor=" + motor + '}';
+        return "Plaka" + getPlaka();
     }
-    
-    
+
 }
