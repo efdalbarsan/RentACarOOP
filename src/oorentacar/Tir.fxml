@@ -14,23 +14,24 @@
             <Font name="Arial Black" size="26.0" />
          </font>
       </Label>
-      <TextField layoutX="24.0" layoutY="139.0" prefHeight="25.0" prefWidth="250.0" promptText="PALAKA" />
-      <TextField layoutX="24.0" layoutY="179.0" prefHeight="25.0" prefWidth="250.0" promptText="MARKA" />
-      <TextField layoutX="24.0" layoutY="222.0" prefHeight="25.0" prefWidth="250.0" promptText="MODEL" />
-      <TextField layoutX="24.0" layoutY="260.0" prefHeight="25.0" prefWidth="250.0" promptText="YIL" />
-      <TextField layoutX="24.0" layoutY="298.0" prefHeight="25.0" prefWidth="250.0" promptText="KILOMETRE" />
-      <TextField layoutX="24.0" layoutY="338.0" prefHeight="25.0" prefWidth="250.0" promptText="MOTOR" />
-      <TextField layoutX="24.0" layoutY="374.0" prefHeight="25.0" prefWidth="250.0" promptText="YAKIT" />
-      <TextField layoutX="24.0" layoutY="411.0" prefHeight="25.0" prefWidth="250.0" promptText="VITES" />
-      <TextField layoutX="24.0" layoutY="451.0" prefHeight="25.0" prefWidth="250.0" promptText="FİYAT" />
-      <TextField layoutX="24.0" layoutY="491.0" prefHeight="25.0" prefWidth="250.0" promptText="MOTOR" />
-      <TextField layoutX="24.0" layoutY="528.0" prefHeight="25.0" prefWidth="250.0" promptText="DİNGİL SAYISI" />
-      <TextField layoutX="24.0" layoutY="571.0" prefHeight="25.0" prefWidth="250.0" promptText="YÜKSEKLİK" />
-      <ListView layoutX="321.0" layoutY="135.0" prefHeight="464.0" prefWidth="359.0" />
-      <Button layoutX="776.0" layoutY="139.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="ARAÇ GÜNCELLE" />
-      <Button layoutX="776.0" layoutY="294.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="ARAÇ EKLE" />
-      <Button layoutX="776.0" layoutY="218.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="141.0" text="ARAÇ SİL" />
+      <TextField fx:id="plaka" layoutX="24.0" layoutY="139.0" prefHeight="25.0" prefWidth="250.0" promptText="PALAKA" />
+      <TextField fx:id="marka" layoutX="24.0" layoutY="179.0" prefHeight="25.0" prefWidth="250.0" promptText="MARKA" />
+      <TextField fx:id="model" layoutX="24.0" layoutY="222.0" prefHeight="25.0" prefWidth="250.0" promptText="MODEL" />
+      <TextField fx:id="yil" layoutX="24.0" layoutY="260.0" prefHeight="25.0" prefWidth="250.0" promptText="YIL" />
+      <TextField fx:id="kilometre" layoutX="24.0" layoutY="298.0" prefHeight="25.0" prefWidth="250.0" promptText="KILOMETRE" />
+      <TextField fx:id="motor" layoutX="24.0" layoutY="338.0" prefHeight="25.0" prefWidth="250.0" promptText="MOTOR" />
+      <TextField fx:id="yakit" layoutX="24.0" layoutY="374.0" prefHeight="25.0" prefWidth="250.0" promptText="YAKIT" />
+      <TextField fx:id="vites" layoutX="24.0" layoutY="411.0" prefHeight="25.0" prefWidth="250.0" promptText="VITES" />
+      <TextField fx:id="fiyat" layoutX="24.0" layoutY="451.0" prefHeight="25.0" prefWidth="250.0" promptText="FİYAT" />
+      <TextField fx:id="beygir" layoutX="24.0" layoutY="491.0" prefHeight="25.0" prefWidth="250.0" promptText="YUKSEKLIK" />
+      <TextField fx:id="dingilSayisi" layoutX="24.0" layoutY="528.0" prefHeight="25.0" prefWidth="250.0" promptText="DİNGİL SAYISI" />
+      <TextField fx:id="yukseklik" layoutX="24.0" layoutY="571.0" prefHeight="25.0" prefWidth="250.0" promptText="BEYGIR" />
+      <ListView fx:id="listView" layoutX="321.0" layoutY="135.0" prefHeight="464.0" prefWidth="359.0" />
+      <Button layoutX="776.0" layoutY="139.0" mnemonicParsing="false" onAction="#update" prefHeight="59.0" prefWidth="141.0" text="ARAÇ GÜNCELLE" />
+      <Button layoutX="776.0" layoutY="294.0" mnemonicParsing="false" onAction="#kaydet" prefHeight="59.0" prefWidth="141.0" text="ARAÇ EKLE" />
+      <Button layoutX="776.0" layoutY="218.0" mnemonicParsing="false" onAction="#delete" prefHeight="59.0" prefWidth="141.0" text="ARAÇ SİL" />
       <Button layoutX="901.0" layoutY="570.0" mnemonicParsing="false" onAction="#geri" prefHeight="25.0" prefWidth="70.0" text="GERİ" />
       <Button layoutX="776.0" layoutY="387.0" mnemonicParsing="false" onAction="#cikis" prefHeight="59.0" prefWidth="141.0" text="ÇIKIŞ" />
+      <Label fx:id="uyariLabel" layoutX="24.0" layoutY="99.0" textFill="#d71212" />
    </children>
 </AnchorPane>

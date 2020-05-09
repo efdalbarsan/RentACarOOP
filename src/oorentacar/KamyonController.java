@@ -6,10 +6,7 @@
 package oorentacar;
 
 import entity.Arac;
-import entity.Bisiklet;
 import entity.Kamyon;
-import entity.Kamyon;
-import fao.KamyonFao;
 import fao.KamyonFao;
 import java.io.IOException;
 import java.net.URL;
@@ -92,6 +89,26 @@ public class KamyonController implements Initializable {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
             uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
+        } else if (!sayiMi(fiyat.getText()) || fiyat.getText().equals("")) {
+            uyariLabel.setText("Lütfen fiyat için düzgün deger giriniz!");
+        } else if (!sayiMi(yukseklik.getText()) || yukseklik.getText().equals("")) {
+            uyariLabel.setText("Lütfen yukseklik için düzgün deger giriniz!");
+        } else if (vites.getText().equals("")) {
+            uyariLabel.setText("Lütfen vites için düzgün deger giriniz!");
+        } else if (model.getText().equals("")) {
+            uyariLabel.setText("Lütfen model için düzgün deger giriniz!");
+        } else if (plaka.getText().equals("")) {
+            uyariLabel.setText("Lütfen plaka için düzgün deger giriniz!");
+        } else if (!sayiMi(beygir.getText()) ||beygir.getText().equals("")) {
+            uyariLabel.setText("Lütfen beygir için düzgün deger giriniz!");
+        } else if (yakit.getText().equals("")) {
+            uyariLabel.setText("Lütfen yakit için düzgün deger giriniz!");
+        } else if (!sayiMi(motor.getText()) || motor.getText().equals("")) {
+            uyariLabel.setText("Lütfen mmotor için düzgün deger giriniz!");
+        } else if (!sayiMi(agirlik.getText()) || agirlik.getText().equals("")) {
+            uyariLabel.setText("Lütfen dingil sayisi için düzgün deger giriniz!");
+        } else if (!sayiMi(yil.getText()) || yil.getText().equals("")) {
+            uyariLabel.setText("Lütfen yil için düzgün deger giriniz!");
         } else {
             kamyon.setFiyat(Integer.valueOf(fiyat.getText()));
             kamyon.setAgirlik(Integer.valueOf(agirlik.getText()));
