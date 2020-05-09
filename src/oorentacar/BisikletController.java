@@ -5,7 +5,6 @@
  */
 package oorentacar;
 
-import com.sun.deploy.util.StringUtils;
 import entity.Arac;
 import entity.Bisiklet;
 import fao.BisikletFao;

@@ -9,10 +9,11 @@ package entity;
  *
  * @author Barsan
  */
-public class Suv extends Arac{
-    private double yukseklik;
-    private double agirlik;
-    private String cekis;
+public class Suv extends Arac {
+
+    private int yukseklik;
+    private int agirlik;
+    private int cekis;
 
     public Suv() {
     }
@@ -21,33 +22,38 @@ public class Suv extends Arac{
         super(arac_id, plaka, marka, model, yil, kilometre, motor, yakit, vites, fiyat);
     }
 
-    public double getYukseklik() {
+    public int getYukseklik() {
         return yukseklik;
     }
 
-    public void setYukseklik(double yukseklik) {
+    public void setYukseklik(int yukseklik) {
         this.yukseklik = yukseklik;
     }
 
-    public double getAgirlik() {
+    public int getAgirlik() {
         return agirlik;
     }
 
-    public void setAgirlik(double agirlik) {
+    public void setAgirlik(int agirlik) {
         this.agirlik = agirlik;
     }
 
-    public String getCekis() {
+    public int getCekis() {
         return cekis;
     }
 
-    public void setCekis(String cekis) {
+    public void setCekis(int cekis) {
         this.cekis = cekis;
+    }
+
+    public String toFile() {
+        return "<" + getArac_id() + ">" + getPlaka() + "^" + getMarka() + "#" + getModel() + "*" + getYil() + "$"
+                + getKilometre() + "%" + getMotor() + "&" + getYakit() + "{" + getVites() + "(" + getFiyat() + "[" + yukseklik + "]" + agirlik + ")" + cekis + "}";
     }
 
     @Override
     public String toString() {
-        return "Suv{" + "yukseklik=" + yukseklik + ", agirlik=" + agirlik + ", cekis=" + cekis + '}';
+        return "Plaka" + getPlaka();
     }
 
 }
