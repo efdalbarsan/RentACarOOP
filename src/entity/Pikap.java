@@ -45,9 +45,13 @@ public class Pikap extends Arac{
         this.cekis = cekis;
     }
 
+    public String toFile() {
+        return "<"+getArac_id()+">"+getPlaka()+"^"+getMarka()+"#"+getModel()+"*"+getYil()+"$"
+                +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+yukseklik +"]"+agirlik+")"+cekis+"}";
+    }
     @Override
     public String toString() {
-        return "Pikap{" + "yukseklik=" + yukseklik + ", agirlik=" + agirlik + ", cekis=" + cekis + '}';
+        return "Plaka"+getPlaka();
     }
     
     
