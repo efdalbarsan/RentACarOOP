@@ -21,8 +21,8 @@ import java.util.Scanner;
  *
  * @author Barsan
  */
-public class TraktorFao extends Fao{
-    
+public class TraktorFao extends Fao {
+
     public List<Arac> getAracList() {
         List<Arac> list = new ArrayList<>();
 
@@ -56,8 +56,8 @@ public class TraktorFao extends Fao{
 
         return list;
     }
-    
-     @Override
+
+    @Override
     public void ekle(Object obj) {
         Traktor tra = (Traktor) obj;
         tra.setArac_id(getId());
@@ -75,6 +75,18 @@ public class TraktorFao extends Fao{
 
         }
     }
+
+    @Override
+    public Arac bul(int id) {
+
+        for (Arac arac : getAracList()) {
+            if (arac.getArac_id() == id) {
+                return arac;
+            }
+        }
+        return null;
+    }
+
     public List<String> plakaList() {
         List<String> list = new ArrayList<>();
         try {

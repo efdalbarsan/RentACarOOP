@@ -21,9 +21,9 @@ import java.util.Scanner;
  *
  * @author Barsan
  */
-public class LimuzinFao extends Fao{
+public class LimuzinFao extends Fao {
 
-public List<Arac> getAracList() {
+    public List<Arac> getAracList() {
         List<Arac> list = new ArrayList<>();
 
         try {
@@ -75,6 +75,18 @@ public List<Arac> getAracList() {
 
         }
     }
+
+    @Override
+    public Arac bul(int id) {
+
+        for (Arac arac : getAracList()) {
+            if (arac.getArac_id() == id) {
+                return arac;
+            }
+        }
+        return null;
+    }
+
     @Override
     public List<String> plakaList() {
         List<String> list = new ArrayList<>();

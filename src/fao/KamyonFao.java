@@ -20,7 +20,7 @@ import java.util.Scanner;
  *
  * @author Barsan
  */
-public class KamyonFao extends Fao{
+public class KamyonFao extends Fao {
 
     public List<Arac> getAracList() {
         List<Arac> list = new ArrayList<>();
@@ -55,8 +55,8 @@ public class KamyonFao extends Fao{
 
         return list;
     }
-    
-     @Override
+
+    @Override
     public void ekle(Object obj) {
         Kamyon kam = (Kamyon) obj;
         kam.setArac_id(getId());
@@ -74,6 +74,18 @@ public class KamyonFao extends Fao{
 
         }
     }
+
+    @Override
+    public Arac bul(int id) {
+
+        for (Arac arac : getAracList()) {
+            if (arac.getArac_id() == id) {
+                return arac;
+            }
+        }
+        return null;
+    }
+
     public List<String> plakaList() {
         List<String> list = new ArrayList<>();
         try {

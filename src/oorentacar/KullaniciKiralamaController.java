@@ -108,38 +108,47 @@ public class KullaniciKiralamaController implements Initializable {
         } else if (tip.equals("id=suvButton")) {
             fao = new SuvFao();
             aracList = fao.getAracList();
+            tmpTip ="suv";
             listeyiGoster();
         } else if (tip.equals("id=limuzinButton")) {
             fao = new LimuzinFao();
             aracList = fao.getAracList();
+            tmpTip ="limuzin";
             listeyiGoster();
         } else if (tip.equals("id=kamyonButton")) {
             fao = new KamyonFao();
             aracList = fao.getAracList();
+            tmpTip ="kamyon";
             listeyiGoster();
         } else if (tip.equals("id=bisikletButton")) {
             fao = new BisikletFao();
             aracList = fao.getAracList();
+            tmpTip ="bisiklet";
             listeyiGoster();
         } else if (tip.equals("id=tirButton")) {
             fao = new TirFao();
             aracList = fao.getAracList();
+            tmpTip ="tir";
             listeyiGoster();
         } else if (tip.equals("id=yatButton")) {
             fao = new YatFao();
             aracList = fao.getAracList();
+            tmpTip ="yat";
             listeyiGoster();
         } else if (tip.equals("id=motorButton")) {
             fao = new MotorAracFao();
             aracList = fao.getAracList();
+            tmpTip ="motor";
             listeyiGoster();
         } else if (tip.equals("id=traktorButton")) {
             fao = new TraktorFao();
             aracList = fao.getAracList();
+            tmpTip ="traktor";
             listeyiGoster();
         } else if (tip.equals("id=pikapButton")) {
             fao = new PikapFao();
             aracList = fao.getAracList();
+            tmpTip ="taksi";
             listeyiGoster();
         }
 

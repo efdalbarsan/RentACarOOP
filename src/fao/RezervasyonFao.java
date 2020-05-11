@@ -134,4 +134,9 @@ public class RezervasyonFao extends Fao {
     public MusteriFao getMfao() {
         return mfao == null ? mfao = new MusteriFao() : mfao;
     }
+
+    @Override
+    public Arac bul(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

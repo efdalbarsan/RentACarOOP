@@ -75,6 +75,16 @@ public class BisikletFao extends Fao {
         }
     }
     @Override
+    public Arac bul(int id) {
+
+        for (Arac arac : getAracList()) {
+            if (arac.getArac_id() == id) {
+                return arac;
+            }
+        }
+        return null;
+    }
+    @Override
     public List<String> plakaList() {
         List<String> list = new ArrayList<>();
         try {
@@ -153,4 +163,6 @@ public class BisikletFao extends Fao {
     public int getId() {
         return getAracList().size();
     }
+
+    
 }
