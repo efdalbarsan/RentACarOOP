@@ -38,7 +38,7 @@ public class AdminController implements Initializable {
 
     @FXML
     private void motorIslem(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("Motor.fxml"));
+        AnchorPane pane = FXMLLoader.load(getClass().getResource("MotorArac.fxml"));
         adminPane.getChildren().setAll(pane);
     }
 

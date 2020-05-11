@@ -23,5 +23,8 @@ public abstract class Fao {
     public abstract List<Arac> getAracList();
     
     public abstract List<String> plakaList();
+    public  Arac bul(int id){
+    return new Arac();};
+  
 
 }

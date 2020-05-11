@@ -6,16 +6,15 @@
 package oorentacar;
 
 import entity.Arac;
-import entity.Bisiklet;
-import entity.Taksi;
-import entity.Tir;
+import entity.Rezervasyon;
 import fao.BisikletFao;
 import fao.Fao;
 import fao.KamyonFao;
 import fao.LimuzinFao;
-import fao.MotorFao;
+import fao.MotorAracFao;
 import fao.MusteriManager;
 import fao.PikapFao;
+import fao.RezervasyonFao;
 import fao.SuvFao;
 import fao.TaksiFao;
 import fao.TirFao;
@@ -23,7 +22,6 @@ import fao.TraktorFao;
 import fao.YatFao;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -37,6 +35,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -49,6 +48,8 @@ public class KullaniciKiralamaController implements Initializable {
     private List<String> stringList;
     private ObservableList observableList;
     private List<Arac> aracList = null;
+    private RezervasyonFao rezfao=null;
+    private Arac arac;
     @FXML
     private Button taksiButton;
     @FXML
@@ -85,9 +86,12 @@ public class KullaniciKiralamaController implements Initializable {
     private Label yakitLabel;
     @FXML
     private Label vitesLabel;
-
+    @FXML
+    private TextField alisTarihi;
+    @FXML
+    private TextField teslimTarihi;
     Fao fao;
-
+    String tmpTip="";
     /**
      * Initializes the controller class.
      */
@@ -99,13 +103,16 @@ public class KullaniciKiralamaController implements Initializable {
         if (tip.equals("id=taksiButton")) {
             fao = new TaksiFao();
             aracList = fao.getAracList();
+            tmpTip ="taksi";
             listeyiGoster();
         } else if (tip.equals("id=suvButton")) {
             fao = new SuvFao();
             aracList = fao.getAracList();
+            listeyiGoster();
         } else if (tip.equals("id=limuzinButton")) {
             fao = new LimuzinFao();
             aracList = fao.getAracList();
+            listeyiGoster();
         } else if (tip.equals("id=kamyonButton")) {
             fao = new KamyonFao();
             aracList = fao.getAracList();
@@ -117,18 +124,23 @@ public class KullaniciKiralamaController implements Initializable {
         } else if (tip.equals("id=tirButton")) {
             fao = new TirFao();
             aracList = fao.getAracList();
+            listeyiGoster();
         } else if (tip.equals("id=yatButton")) {
             fao = new YatFao();
             aracList = fao.getAracList();
+            listeyiGoster();
         } else if (tip.equals("id=motorButton")) {
-            fao = new MotorFao();
+            fao = new MotorAracFao();
             aracList = fao.getAracList();
+            listeyiGoster();
         } else if (tip.equals("id=traktorButton")) {
             fao = new TraktorFao();
             aracList = fao.getAracList();
+            listeyiGoster();
         } else if (tip.equals("id=pikapButton")) {
             fao = new PikapFao();
             aracList = fao.getAracList();
+            listeyiGoster();
         }
 
     }
@@ -144,20 +156,24 @@ public class KullaniciKiralamaController implements Initializable {
                 yakitLabel.setText(bis.getYakit());
                 vitesLabel.setText(bis.getVites());
                 System.out.println("-------------->" + bis.toString());
+                setArac(bis);
                 break;
             }
         }
-
-        //marka.setText(arc.getModel());
     }
 
-    // FXML elementi element.setVisibility(true);
-    // element.setText("");
     @FXML
     public void rezervasyonYap(ActionEvent event) {
-        rezLabel.setText("Rezervasyon başarıyla yapıldı!");
-        System.out.println("Rezervasyon başarıyla yapıldı!");
+        Rezervasyon rez = new Rezervasyon();
+        rez.setAlisTarih(alisTarihi.getText());
+        rez.setVerisTarih(teslimTarihi.getText());
+        rez.setKullanici_id(MusteriManager.getGecerliMusteri().getMusteri_id());
+        rez.setArac_id(getArac().getArac_id());
+        rez.setTipi(tmpTip);
+        getRezfao().ekle(rez);
     }
+    
+  
 
     public void listeyiGoster() {
 
@@ -180,6 +196,20 @@ public class KullaniciKiralamaController implements Initializable {
 
     }
 
+    public RezervasyonFao getRezfao() {
+        return rezfao==null? rezfao= new RezervasyonFao() : rezfao;
+    }
+
+    public Arac getArac() {
+        return arac;
+    }
+
+    public void setArac(Arac arac) {
+        this.arac = arac;
+    }
+    
+    
+
     @FXML
     private void cikis(ActionEvent event) throws IOException {
         MusteriManager.setGecerliMusteri(null);
@@ -189,7 +219,9 @@ public class KullaniciKiralamaController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        
     }
 
+  
 }

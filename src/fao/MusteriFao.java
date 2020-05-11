@@ -65,6 +65,16 @@ public class MusteriFao {
         }
         return list;
     }
+    public Musteri bul(int id){
+        Musteri tmp = null;
+        for (Musteri musteri : MusteriListesi()) {
+            if (musteri.getMusteri_id() == id) {
+                return tmp;
+            }
+        }
+        
+        return null;
+    }
    
     public Musteri giris(int id,String parola){
         for (Musteri musteri : getMlist()) {
@@ -85,6 +95,15 @@ public class MusteriFao {
 
     public int getId() {
         return getMlist().size();
+    }
+    
+    public Musteri bulMusteri(int id){
+        for (Musteri musteri : MusteriListesi()) {
+            if (musteri.getMusteri_id() == id) {
+                return musteri;
+            }
+        }
+        return null;
     }
 
     public List<Musteri> getMlist() {

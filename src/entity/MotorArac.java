@@ -9,15 +9,16 @@ package entity;
  *
  * @author Barsan
  */
-public class Motor extends Arac{
+public class MotorArac extends Arac {
+
     private String renk;
     private int tekerlekSayisi;
-    private int motorGucu;
+    private int vitesSayisi;
 
-    public Motor() {
+    public MotorArac() {
     }
 
-    public Motor(int arac_id, String plaka, String marka, String model, int yil, int kilometre, double motor, String yakit, String vites, int fiyat) {
+    public MotorArac(int arac_id, String plaka, String marka, String model, int yil, int kilometre, double motor, String yakit, String vites, int fiyat) {
         super(arac_id, plaka, marka, model, yil, kilometre, motor, yakit, vites, fiyat);
     }
 
@@ -37,20 +38,21 @@ public class Motor extends Arac{
         this.tekerlekSayisi = tekerlekSayisi;
     }
 
-    public int getMotorGucu() {
-        return motorGucu;
+    public int getVitesSayisi() {
+        return vitesSayisi;
     }
 
-    public void setMotorGucu(int motorGucu) {
-        this.motorGucu = motorGucu;
+    public void setVitesSayisi(int vitesSayisi) {
+        this.vitesSayisi = vitesSayisi;
     }
 
+    public String toFile() {
+        return "<"+getArac_id()+">"+getPlaka()+"^"+getMarka()+"#"+getModel()+"*"+getYil()+"$"
+                +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+renk +"]"+vitesSayisi+")"+vitesSayisi+"}";
+    }
     @Override
     public String toString() {
-        return "Motor{" + "renk=" + renk + ", tekerlekSayisi=" + tekerlekSayisi + ", motorGucu=" + motorGucu + '}';
+        return "Plaka"+getPlaka();
     }
 
- 
-    
-    
 }

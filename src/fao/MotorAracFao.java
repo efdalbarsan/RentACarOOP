@@ -6,7 +6,8 @@
 package fao;
 
 import entity.Arac;
-import entity.Taksi;
+import entity.MotorArac;
+import entity.MotorArac;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,17 +21,17 @@ import java.util.Scanner;
  *
  * @author Barsan
  */
-public class TaksiFao extends Fao {
-
+public class MotorAracFao extends Fao{
+    
     public List<Arac> getAracList() {
         List<Arac> list = new ArrayList<>();
 
         try {
-            File myObj = new File("taksi.txt");
+            File myObj = new File("motorArac.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                Taksi tmp = new Taksi();
+                MotorArac tmp = new MotorArac();
                 tmp.setArac_id(Integer.valueOf(data.substring(data.indexOf('<') + 1, data.indexOf('>'))));
                 tmp.setPlaka(data.substring(data.indexOf('>') + 1, data.indexOf('^')));
                 tmp.setMarka(data.substring(data.indexOf('^') + 1, data.indexOf('#')));
@@ -41,9 +42,9 @@ public class TaksiFao extends Fao {
                 tmp.setYakit(data.substring(data.indexOf('&') + 1, data.indexOf('{')));
                 tmp.setVites(data.substring(data.indexOf('{') + 1, data.indexOf('(')));
                 tmp.setFiyat(Integer.valueOf(data.substring(data.indexOf('(') + 1, data.indexOf('['))));
-                tmp.setTipi(data.substring(data.indexOf('[') + 1, data.indexOf(']')));
-                tmp.setSunroof(data.substring(data.indexOf(']') + 1, data.indexOf(')')));
-                tmp.setHiz(Integer.valueOf(data.substring(data.indexOf(')') + 1, data.indexOf('}'))));
+                tmp.setRenk(data.substring(data.indexOf('[') + 1, data.indexOf(']')));
+                tmp.setTekerlekSayisi(Integer.valueOf(data.substring(data.indexOf(']') + 1, data.indexOf(')'))));
+                tmp.setVitesSayisi(Integer.valueOf(data.substring(data.indexOf(')') + 1, data.indexOf('}'))));
                 list.add(tmp);
                 System.out.println(data);
             }
@@ -58,38 +59,27 @@ public class TaksiFao extends Fao {
 
     @Override
     public void ekle(Object obj) {
-        Taksi tak = (Taksi) obj;
-        tak.setArac_id(getId());
+        MotorArac mot = (MotorArac) obj;
+        mot.setArac_id(getId());
 
         try {
-            FileWriter fw = new FileWriter("taksi.txt", true);
+            FileWriter fw = new FileWriter("motorArac.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(tak.toFile());
+            bw.write(mot.toFile());
             bw.newLine();
             bw.close();
-            System.out.println("Taksi kaydetme basarili");
+            System.out.println("Motor kaydetme basarili");
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
 
         }
     }
-
     @Override
-    public Arac bul(int id) {
-
-        for (Arac arac : getAracList()) {
-            if (arac.getArac_id() == id) {
-                return arac;
-            }
-        }
-        return null;
-    }
-
     public List<String> plakaList() {
         List<String> list = new ArrayList<>();
         try {
-            File myObj = new File("taksi.txt");
+            File myObj = new File("motorArac.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -108,24 +98,24 @@ public class TaksiFao extends Fao {
 
     @Override
     public void silme(Object obj) {
-        Taksi tak = (Taksi) obj;
-        List<Taksi> taksiList = new ArrayList<>();
+        MotorArac mot = (MotorArac) obj;
+        List<MotorArac> motorAracList = new ArrayList<>();
 
         for (Arac arac : getAracList()) {
-            if (!arac.getPlaka().equals(tak.getPlaka())) {
-                taksiList.add((Taksi) arac);
+            if (!arac.getPlaka().equals(mot.getPlaka())) {
+                motorAracList.add((MotorArac) arac);
             }
         }
 
         try {
-            FileWriter fw = new FileWriter("taksi.txt", false);
+            FileWriter fw = new FileWriter("motorArac.txt", false);
             BufferedWriter bw = new BufferedWriter(fw);
-            for (Taksi taksi : taksiList) {
-                bw.write(taksi.toFile());
+            for (MotorArac motorArac : motorAracList) {
+                bw.write(motorArac.toFile());
                 bw.newLine();
             }
             bw.close();
-            System.out.println("Taksi silme basarili");
+            System.out.println("Motor silme basarili");
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
@@ -135,25 +125,25 @@ public class TaksiFao extends Fao {
 
     @Override
     public void guncelleme(Object obj) {
-        Taksi tak = (Taksi) obj;
-        List<Taksi> taksiList = new ArrayList<>();
+        MotorArac mot = (MotorArac) obj;
+        List<MotorArac> motorAracList = new ArrayList<>();
 
         for (Arac arac : getAracList()) {
-            if (arac.getPlaka().equals(tak.getPlaka())) {
-                arac = tak;
+            if (arac.getPlaka().equals(mot.getPlaka())) {
+                arac = mot;
             }
-            taksiList.add((Taksi) arac);
+            motorAracList.add((MotorArac) arac);
         }
 
         try {
-            FileWriter fw = new FileWriter("taksi.txt", false);
+            FileWriter fw = new FileWriter("motorArac.txt", false);
             BufferedWriter bw = new BufferedWriter(fw);
-            for (Taksi taksi : taksiList) {
-                bw.write(taksi.toFile());
+            for (MotorArac motorArac : motorAracList) {
+                bw.write(motorArac.toFile());
                 bw.newLine();
             }
             bw.close();
-            System.out.println("Taksi guncelleme basarili");
+            System.out.println("Motor guncelleme basarili");
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
@@ -164,5 +154,4 @@ public class TaksiFao extends Fao {
     public int getId() {
         return getAracList().size();
     }
-
 }
