@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -23,6 +24,7 @@ public class OORentACar extends Application {
         
         Scene scene = new Scene(root);
         stage.setTitle("Rent A Car");
+        stage.getIcons().add(new Image("https://www.pngitem.com/pimgs/m/53-534462_car-icons-pdf-car-icon-pdf-hd-png.png"));
         stage.setScene(scene);
         stage.show();
     }

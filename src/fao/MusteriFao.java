@@ -36,7 +36,6 @@ public class MusteriFao {
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
-            e.printStackTrace();
         }
     }
 
@@ -61,7 +60,6 @@ public class MusteriFao {
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
-            e.printStackTrace();
         }
         return list;
     }

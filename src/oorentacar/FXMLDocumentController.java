@@ -52,6 +52,9 @@ public class FXMLDocumentController implements Initializable {
     private void girisYap(ActionEvent event) throws IOException {
         MusteriFao mfao = new MusteriFao();
         Musteri musteri = null;
+        if (emailField.getText().equals("") || parolaField.getText().equals("")) {
+            System.out.println("Lutfen bir parolanızı ve emailinizi  giriniz.");
+        }else{
         if (sayiMi(emailField.getText())) {
             musteri = mfao.giris(Integer.valueOf(emailField.getText()), parolaField.getText());
         } else {
@@ -71,6 +74,7 @@ public class FXMLDocumentController implements Initializable {
 
         } else {
             System.out.println("Hatalı giriş!!!!");
+        }
         }
     }
 

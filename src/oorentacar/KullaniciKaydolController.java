@@ -44,7 +44,7 @@ public class KullaniciKaydolController implements Initializable {
 
     @FXML
     private void kayitOl(ActionEvent event) {
-        if (parolaKontrol()) {
+        if (parolaKontrol()&& !isimField.getText().equals("") && !soyisimField.getText().equals("") && !emailField.getText().equals("") && !kullaniciadiField.getText().equals("")) {
             
         
         Musteri musteri = new Musteri();

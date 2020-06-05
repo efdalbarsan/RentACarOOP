@@ -48,7 +48,7 @@ public class MotorArac extends Arac {
 
     public String toFile() {
         return "<"+getArac_id()+">"+getPlaka()+"^"+getMarka()+"#"+getModel()+"*"+getYil()+"$"
-                +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+renk +"]"+vitesSayisi+")"+vitesSayisi+"}";
+                +getKilometre()+"%"+getMotor()+"&"+getYakit()+"{"+getVites()+"("+getFiyat()+"["+renk +"]"+tekerlekSayisi+")"+vitesSayisi+"}";
     }
     @Override
     public String toString() {
