@@ -93,9 +93,9 @@ public class BisikletController implements Initializable {
         } else if (marka.getText().equals("")) {
             uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
         } else if (!sayiMi(fiyat.getText()) || fiyat.getText().equals("")) {
-            uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
+            uyariLabel.setText("Lütfen fiyat için düzgün deger giriniz!");
         } else if (!sayiMi(jantboyu.getText()) || jantboyu.getText().equals("")) {
-            uyariLabel.setText("Lütfen marka için düzgün deger giriniz!");
+            uyariLabel.setText("Lütfen jant boyu için düzgün deger giriniz!");
         } else if (vites.getText().equals("")) {
             uyariLabel.setText("Lütfen vites için düzgün deger giriniz!");
         } else if (model.getText().equals("")) {
