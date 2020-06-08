@@ -83,7 +83,6 @@ public class SUVController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Suv suv = new Suv();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -192,11 +191,9 @@ public class SUVController implements Initializable {
             System.out.println("dongu" + sv.getPlaka());
             if (sv.getPlaka().equals(term)) {
                 setArac((Suv) sv);
-                System.out.println("-------------->" + sv.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());
@@ -210,7 +207,6 @@ public class SUVController implements Initializable {
         agirlik.setText(String.valueOf(getArac().getAgirlik()));
         cekis.setText(String.valueOf(getArac().getCekis()));
 
-        //marka.setText(arc.getModel());
     }
 
     @Override

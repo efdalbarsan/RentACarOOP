@@ -87,7 +87,6 @@ public class BisikletController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Bisiklet bisiklet = new Bisiklet();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -196,11 +195,9 @@ public class BisikletController implements Initializable {
             System.out.println("dongu" + bis.getPlaka());
             if (bis.getPlaka().equals(term)) {
                 setArac((Bisiklet) bis);
-                System.out.println("-------------->" + bis.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());
@@ -214,7 +211,6 @@ public class BisikletController implements Initializable {
         jantboyu.setText(String.valueOf(getArac().getJantBoyu()));
         vitesSayisi.setText(String.valueOf(getArac().getVitesSayisi()));
 
-        //marka.setText(arc.getModel());
     }
 
     @Override

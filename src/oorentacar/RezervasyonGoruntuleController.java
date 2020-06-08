@@ -5,9 +5,7 @@
  */
 package oorentacar;
 
-import entity.Arac;
 import entity.Rezervasyon;
-import fao.Fao;
 import fao.RezervasyonFao;
 import java.io.IOException;
 import java.net.URL;
@@ -98,7 +96,6 @@ public class RezervasyonGoruntuleController implements Initializable {
                 kullaniciLabel.setText(rez.getMusteri().getAdi()+" "+rez.getMusteri().getSoyadi());
                 alisLabel.setText(rez.getAlisTarih());
                 teslimLabel.setText(rez.getVerisTarih());
-                System.out.println("-------------->" + rez.toString());
                 setRezervasyon(rez);
                 break;
             }

@@ -87,7 +87,6 @@ public class YatController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Yat yat = new Yat();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -176,11 +175,9 @@ public class YatController implements Initializable {
             System.out.println("dongu" + ya.getPlaka());
             if (ya.getPlaka().equals(term)) {
                 setArac((Yat) ya);
-                System.out.println("-------------->" + ya.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());
@@ -194,7 +191,6 @@ public class YatController implements Initializable {
         motorAdeti.setText(String.valueOf(getArac().getMotorAdeti()));
         motorGucu.setText(String.valueOf(getArac().getMotorGucu()));
 
-        //marka.setText(arc.getModel());
     }
 
     @Override

@@ -192,11 +192,9 @@ public class MotorAracController implements Initializable {
             System.out.println("dongu" + mot.getPlaka());
             if (mot.getPlaka().equals(term)) {
                 setArac((MotorArac) mot);
-                System.out.println("-------------->" + mot.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());

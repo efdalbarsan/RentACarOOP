@@ -164,7 +164,6 @@ public class KullaniciKiralamaController implements Initializable {
                 plakaLabel.setText(bis.getPlaka());
                 yakitLabel.setText(bis.getYakit());
                 vitesLabel.setText(bis.getVites());
-                System.out.println("-------------->" + bis.toString());
                 setArac(bis);
                 break;
             }

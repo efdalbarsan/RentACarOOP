@@ -7,7 +7,6 @@ package oorentacar;
 
 import entity.Arac;
 import entity.Pikap;
-import entity.Pikap;
 import fao.PikapFao;
 import java.io.IOException;
 import java.net.URL;
@@ -84,7 +83,6 @@ public class PikapController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Pikap pikap = new Pikap();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -192,11 +190,9 @@ public class PikapController implements Initializable {
             System.out.println("dongu" + pik.getPlaka());
             if (pik.getPlaka().equals(term)) {
                 setArac((Pikap) pik);
-                System.out.println("-------------->" + pik.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());

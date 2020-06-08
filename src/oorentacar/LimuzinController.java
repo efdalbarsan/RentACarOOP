@@ -7,9 +7,6 @@ package oorentacar;
 
 import entity.Arac;
 import entity.Limuzin;
-import entity.Limuzin;
-import entity.Limuzin;
-import fao.LimuzinFao;
 import fao.LimuzinFao;
 import java.io.IOException;
 import java.net.URL;
@@ -88,7 +85,6 @@ public class LimuzinController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Limuzin limuzin = new Limuzin();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -196,11 +192,9 @@ public class LimuzinController implements Initializable {
             System.out.println("dongu" + lim.getPlaka());
             if (lim.getPlaka().equals(term)) {
                 setArac((Limuzin) lim);
-                System.out.println("-------------->" + lim.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());
@@ -213,8 +207,6 @@ public class LimuzinController implements Initializable {
         kapiSayisi.setText(String.valueOf(getArac().getKapiSayisi()));
         uzunluk.setText(String.valueOf(getArac().getUzunluk()));
         renk.setText(getArac().getRenk());
-
-        //marka.setText(arc.getModel());
     }
 
     @Override

@@ -7,9 +7,6 @@ package oorentacar;
 
 import entity.Arac;
 import entity.Taksi;
-import entity.Taksi;
-import entity.Taksi;
-import fao.TaksiFao;
 import fao.TaksiFao;
 import java.io.IOException;
 import java.net.URL;
@@ -86,7 +83,6 @@ public class TaksiController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Taksi taksi = new Taksi();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -134,7 +130,6 @@ public class TaksiController implements Initializable {
     @FXML
     private void update(ActionEvent event) {
         getForm();
-        System.out.println(getArac().toFile() + "---------------------------burasi update");
         getTfao().guncelleme(getArac());
         listeyiGoster();
     }
@@ -181,11 +176,9 @@ public class TaksiController implements Initializable {
             System.out.println("dongu" + tak.getPlaka());
             if (tak.getPlaka().equals(term)) {
                 setArac((Taksi) tak);
-                System.out.println("-------------->" + tak.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());
@@ -199,7 +192,6 @@ public class TaksiController implements Initializable {
         sunroof.setText(getArac().getSunroof());
         hiz.setText(String.valueOf(getArac().getHiz()));
 
-        //marka.setText(arc.getModel());
     }
 
     public TaksiFao getTfao() {

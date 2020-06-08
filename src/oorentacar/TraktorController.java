@@ -83,7 +83,6 @@ public class TraktorController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Traktor traktor = new Traktor();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -192,11 +191,9 @@ public class TraktorController implements Initializable {
             System.out.println("dongu" + tra.getPlaka());
             if (tra.getPlaka().equals(term)) {
                 setArac((Traktor) tra);
-                System.out.println("-------------->" + tra.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());

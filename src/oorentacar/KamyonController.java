@@ -84,7 +84,6 @@ public class KamyonController implements Initializable {
     @FXML
     private void kaydet(ActionEvent event) throws IOException {
         Kamyon kamyon = new Kamyon();
-        // marka.getText().equals("")
         if (!sayiMi(kilometre.getText()) || kilometre.getText().equals("")) {
             uyariLabel.setText("Lütfen kilometre için düzgün deger giriniz!");
         } else if (marka.getText().equals("")) {
@@ -193,11 +192,9 @@ public class KamyonController implements Initializable {
             System.out.println("dongu" + kam.getPlaka());
             if (kam.getPlaka().equals(term)) {
                 setArac((Kamyon) kam);
-                System.out.println("-------------->" + kam.toString());
                 break;
             }
         }
-        System.out.println("--------------------" + getArac().getPlaka());
         plaka.setText(getArac().getPlaka());
         marka.setText(getArac().getMarka());
         model.setText(getArac().getModel());
@@ -211,7 +208,6 @@ public class KamyonController implements Initializable {
         agirlik.setText(String.valueOf(getArac().getAgirlik()));
         beygir.setText(String.valueOf(getArac().getBeygir()));
 
-        //marka.setText(arc.getModel());
     }
 
     @Override
