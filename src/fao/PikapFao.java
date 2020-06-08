@@ -7,7 +7,6 @@ package fao;
 
 import entity.Arac;
 import entity.Pikap;
-import entity.Pikap;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -7,7 +7,6 @@ package fao;
 
 import entity.Arac;
 import entity.Limuzin;
-import entity.Limuzin;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
