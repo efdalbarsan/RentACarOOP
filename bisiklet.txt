@@ -1,1 +1,5 @@
-<0>deneme^deneme#dene*123$123%1.0&asd{asd(123[siyah]54)21}
+<0>AAA 123^Bıanchı#Soul*2000$2002%0.0&0{Otomatik(40[siyah]54)21}
+<1>BBB 123^Orbea#Soul*2000$2002%0.0&0{Manuel(40[kırmızı]54)18}
+<2>CCC 123^Giant#Trek*2000$2002%0.0&0{Vitezsiz(40[siyah]50)21}
+<3>DDD 123^Giant#Trek*2000$2002%0.0&0{Manuel(50[Mavi]50)21}
+<4>EEE 123^Canno#Trek*2017$2345%0.0&0{Vitezsiz(70[siyah]50)21}

@@ -1,1 +1,5 @@
-<0>dfs^dsf#fdsee*21$12%21.0&21{12(12[12]21)21.0}
+<0>38 AAC^Bonito#32*2015$1000%10.0&Benzin{Otomatık(1000[8]2)1000.0}
+<1>38 TRE^Cobrey#33 HT*2016$1000%10.0&Dızel{Otomatık(1000[8]2)1000.0}
+<2>38 KKR^Princ#V58*2004$1000%10.0&Benzin{Otomatık(1000[8]2)1000.0}
+<3>38 WEW^Princ#V58*2004$1000%10.0&Benzin{Otomatık(1000[8]2)1000.0}
+<4>38 ALL^Princ#V58*2004$1000%10.0&Benzin{Manuuel(1000[8]2)1000.0}

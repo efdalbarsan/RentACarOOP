@@ -1,1 +1,5 @@
-<0>dsf^sdf#fds*32$44%23.0&23{32(32[23]32.0)32}
+<0>34 ASD^Sanda#Kara*2017$3242%4.0&Benzin{Manuel(300[8]300.0)Beyaz}
+<1>34 REZ^Sanda#Kara*2019$3455%4.0&Dizel{Manuel(400[8]300.0)Siyah}
+<2>34 TAR^Tor#Fat*2020$10000%4.0&Dizel{Otomatık(500[8]300.0)Siyah}
+<3>34 YOR^Tor#Fat*2020$10000%4.0&Dizel{Otomatık(500[8]300.0)Siyah}
+<4>32 TRE^Sanda#Kara*2017$3242%4.0&Benzin{Manuel(300[8]300.0)Beyaz}
